@@ -41,7 +41,6 @@ export function Sounds({
          isPlaying: false,
 
          select() {
-            resetCards()
             toggleCardColor(this)
             volumeControl(this)
          }
@@ -55,7 +54,6 @@ export function Sounds({
          isPlaying: false,
 
          select() {
-            resetCards(this)
             toggleCardColor(this)
             volumeControl(this)
          }         
@@ -69,7 +67,6 @@ export function Sounds({
          isPlaying: false,
 
          select() {
-            resetCards(this)
             toggleCardColor(this)
             volumeControl(this)
          }
@@ -83,7 +80,6 @@ export function Sounds({
          isPlaying: false,
 
          select() {
-            resetCards(this)
             toggleCardColor(this)
             volumeControl(this)
          }
@@ -110,9 +106,11 @@ export function Sounds({
    
    function togglePlay(sound) {
    if (sound.isPlaying === false) {
+      resetCards()
       sound.select()
       sound.music.play()
       sound.isPlaying = true
+      console.log(sound.isPlaying)
    } else {
       sound.music.pause()
       sound.isPlaying = false
@@ -137,23 +135,29 @@ export function Sounds({
    }
 
    function resetCards() {
+      console.log("chega no resetCards")
       soundCollection.forEach(element => {
          if (element.isPlaying === true) {
             element.music.pause()
-            element.music.pause()
             element.isPlaying = false
             element.select()
+            console.log("cai no resetCards")
          }
       })
    }
    
 
      return {
-        playForest,
-        playRain,
-        playCoffeeShop,
-        playFire,
-        resetCards,
-        volumeControl,
+      soundCollection,
+      forestSound,
+      rainSound,
+      coffeeShopSound,
+      fireSound,
+      playForest,
+      playRain,
+      playCoffeeShop,
+      playFire,
+      resetCards,
+      volumeControl,
      }
 }

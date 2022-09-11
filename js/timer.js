@@ -6,7 +6,6 @@ export function Timer({
     secondsDisplay,
     buttonPlay,
     buttonPause,
-    newMinutes,
     btnSoundForest,
     btnSoundRain,
     btnSoundCoffeeShop,
@@ -42,7 +41,6 @@ export function Timer({
     })
     
     let timeOut
-    console.log(controls.newMinutes)
 
     function countdown() {
         timeOut = setTimeout(() => {
@@ -55,10 +53,13 @@ export function Timer({
             } else if (seconds > 0) {
                 updateTimerDisplay(minutes, String(seconds - 1))
             } else {
+                console.log("cai no else, ok")
                 hold()
-                updateTimerDisplay(controls.newMinutes, seconds)
                 controls.playPauseButtonToggle()
                 sounds.resetCards()
+                updateTimerDisplay(controls.newMinutes, seconds)
+                console.log(sounds.resetCards)
+                return
             }
             countdown()
         }, 1000);

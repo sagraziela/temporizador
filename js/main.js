@@ -1,6 +1,6 @@
 import { Timer } from './timer.js';
 import { Controls } from './controls.js';
-import { Sounds } from './sounds.js'
+import { Sounds } from './sounds.js';
 
 let minutesDisplay = document.querySelector('#minutes')
 let secondsDisplay = document.querySelector('#seconds')
@@ -41,7 +41,7 @@ const controls = Controls({
     buttonPlay,
     buttonPause,
     minutesDisplay,
-    secondsDisplay,
+    secondsDisplay
 })
 
 const timer = Timer({
@@ -70,8 +70,7 @@ const sounds = Sounds({
     soundFire
 })
 
-minutesDisplay.textContent = "05"
-
+minutesDisplay.textContent = '03'
 
 // timer buttons
 buttonPlay.addEventListener('click', () => {
