@@ -17,7 +17,8 @@ export function Timer({
     soundForest,
     soundRain,
     soundCoffeeShop,
-    soundFire
+    soundFire,
+    soundCollection
 }) {
 
     const controls = Controls({
@@ -37,7 +38,8 @@ export function Timer({
         soundForest,
         soundRain,
         soundCoffeeShop,
-        soundFire
+        soundFire,
+        soundCollection
     })
     
     let timeOut
@@ -49,19 +51,19 @@ export function Timer({
             let seconds = Number(secondsDisplay.textContent)
         
             if (minutes > 0 && seconds == 0) {
-                updateTimerDisplay(String(minutes - 1), 3)
+                updateTimerDisplay(String(minutes - 1), 59)
             } else if (seconds > 0) {
                 updateTimerDisplay(minutes, String(seconds - 1))
             } else {
-                console.log("cai no else, ok")
                 hold()
                 controls.playPauseButtonToggle()
-                sounds.resetCards()
                 updateTimerDisplay(controls.newMinutes, seconds)
-                console.log(sounds.resetCards)
+                sounds.resetCards()
                 return
             }
+
             countdown()
+            
         }, 1000);
     }
 

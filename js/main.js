@@ -70,7 +70,7 @@ const sounds = Sounds({
     soundFire
 })
 
-minutesDisplay.textContent = '03'
+minutesDisplay.textContent = '05'
 
 // timer buttons
 buttonPlay.addEventListener('click', () => {

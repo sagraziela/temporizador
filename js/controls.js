@@ -12,13 +12,13 @@ export function Controls ({
     }
 
     function increase() {
-        newMinutes = String(Number(minutesDisplay.textContent) + 1).padStart(2, '0')
+        newMinutes = String(Number(minutesDisplay.textContent) + 5).padStart(2, '0')
         updateMinutes()
         console.log(newMinutes)
     }
 
     function decrease() {
-        newMinutes = String(Number(minutesDisplay.textContent) - 1).padStart(2, '0')
+        newMinutes = String(Number(minutesDisplay.textContent) - 5).padStart(2, '0')
         updateMinutes()
     }
 
